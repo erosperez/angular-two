@@ -1,6 +1,9 @@
 <h1>{{titulo}}</h1>
 <p>Listado de peliculas</p>
-<ul>
-    <li><b>Pelicula: </b>{{pelicula}}</li>
-    <li><b>Año: </b>{{anio}}</li>
+<button (click)="onShowHide()" [class.showingData]="mostrarDatos === true">Mostrar datos</button>
+<button (click)="onShowHide()" [class.showingData]="mostrarDatos === false">Ocultar datos</button>
+<ul *ngIf="mostrarDatos === true">
+    <li><b>Pelicula: </b>{{pelicula.titulo}}</li>
+    <li><b>Director: </b>{{pelicula.director}}</li>
+    <li><b>Año: </b>{{pelicula.anio}}</li>
 </ul>
