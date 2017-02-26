@@ -1,0 +1,26 @@
+LISTADO DE PELICULAS COMPONENTE LIST
+
+<p>Pelicula favorita</p>
+<button (click)="onShowHide()" [class.showingData]="mostrarDatos === true">Mostrar datos</button>
+<button (click)="onShowHide()" [class.showingData]="mostrarDatos === false">Ocultar datos</button>
+<ul *ngIf="mostrarDatos === true">
+    <li><b>Pelicula: </b>{{pelicula.titulo}}</li>
+    <li><b>Director: </b>{{pelicula.director}}</li>
+    <li><b>Año: </b>{{pelicula.anio}}</li>
+</ul>
+
+<p>
+    Cambiar titulo:
+    <input type='text' [(ngModel)]="pelicula.titulo" (keypress)="debug(pelicula.titulo)"/>
+</p>
+----------------------------------------------------------------------------------------------------------
+
+<p>Listado de películas:</p>
+<ul>
+    <ul *ngFor="#pelicula of peliculas">
+        <li (click)="onCambiarPelicula(pelicula)" class="pelicula-title" [class.clicked]="peliculaElegida.id === pelicula.id"><b>Pelicula: </b>{{pelicula.titulo}}</li>
+        <li *ngIf="pelicula.director"><b>Director: </b>{{pelicula.director}}</li>
+        <li *ngIf="pelicula.anio != null"><b>Año: </b>{{pelicula.anio}}</li>
+        <br/>
+    </ul>
+</ul>

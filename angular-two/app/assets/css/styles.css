@@ -8,3 +8,16 @@ h1{
 .showingData{
     display: none;
 }
+
+.pelicula-title{
+    cursor:pointer;
+}
+
+.pelicula-title:hover{
+    text-decoration: underline;
+}
+.clicked{
+    color: blue;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
